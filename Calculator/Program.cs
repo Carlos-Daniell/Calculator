@@ -5,6 +5,8 @@ namespace Calculator {
         static void Main(string[] args) {
 
             Console.WriteLine("Primerio valor");
+            float v1 = float.Parse(Console.ReadLine());
+            Console.WriteLine(v1);
         }
     }
 }
