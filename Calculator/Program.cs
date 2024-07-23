@@ -1,10 +1,10 @@
 ﻿using System;
 
 namespace Calculator {
-    internal class Program {
+    class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("Primerio valor");
+            Console.WriteLine("Digite Primerio valor");
             float v1 = float.Parse(Console.ReadLine());
             Console.WriteLine(v1);
         }
