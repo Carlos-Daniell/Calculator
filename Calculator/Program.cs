@@ -3,8 +3,8 @@
 namespace Calculator {
     class Program {
         static void Main(string[] args) {
+            Console.Clear();
             Menu();
-
         }
         static void Menu() {
             Console.WriteLine("Oque deseja fazer ?");
@@ -12,11 +12,20 @@ namespace Calculator {
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Divisão");
             Console.WriteLine("4 - Multiplicação");
-            Console.WriteLine("5 - Sair");
+            Console.WriteLine("0 - Sair");
 
             Console.WriteLine("-----------------");
             Console.Write("Selecione uma opção: ");
             short res = short.Parse(Console.ReadLine());
+
+            switch (res) {
+                case 1: Soma(); break;
+                case 2: Subtracao(); break;
+                case 3: Divisao(); break;
+                case 4: Multiplicacao(); break;
+                case 0: System.Environment.Exit(0); break;
+                default: Menu(); break;
+            }
 
         }
         static void Soma() {
@@ -29,7 +38,9 @@ namespace Calculator {
 
             Console.WriteLine("");
             float resultado = v1 + v2;
-            Console.Write($"O resultado da Soma é: {resultado}");
+            Console.WriteLine($"O resultado da Soma é: {resultado}");
+
+            Menu();
 
         }
         static void Subtracao() {
@@ -42,6 +53,8 @@ namespace Calculator {
             Console.WriteLine("");
             float resultado = v1 - v2;
             Console.WriteLine($"O resultado da subtração é: {resultado}");
+
+            Menu();
         }
         static void Divisao() {
             Console.Write("Digite o primeiro valor: ");
@@ -53,8 +66,10 @@ namespace Calculator {
             Console.WriteLine("");
             float resultado = v1 / v2;
             Console.WriteLine($"O resultado da divisão é: {resultado}");
+
+            Menu();
         }
-        public static void Mutiplicacao() {
+        static void Multiplicacao() {
             Console.Write("Digite o primeiro valor: ");
             float v1 = float.Parse(Console.ReadLine());
 
@@ -64,6 +79,8 @@ namespace Calculator {
             Console.WriteLine("");
             float resultado = v1 * v2;
             Console.WriteLine($"O resultado da multiplicação é: {resultado}");
+
+            Menu();
         }
 
     }
